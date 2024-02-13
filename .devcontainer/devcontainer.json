@@ -3,7 +3,7 @@
 {
 	"name": "Rust",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "codesecurese/codesonar-3-builder:8.1b0"
+	"image": "codesecurese/rust-cso-builder:8.1b0",
 
 	// Use 'mounts' to make the cargo cache persistent in a Docker Volume.
 	// "mounts": [
@@ -13,12 +13,12 @@
 	// 		"type": "volume"
 	// 	}
 	// ]
-	"onCreateCommand": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > install.sh; chmod +x install.sh; ./install.sh -y"
+	
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 	"containerEnv": {
-		"SHELL": "/bin/bash -c 'source $HOME/.cargo/env && exec $SHELL'"
-	}
+		"SHELL": "/usr/bin/bash"
+}
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 

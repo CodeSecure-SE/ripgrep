@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "inputs": [
+    {
+    "id": "codesonarAnalysisName",
+    "type": "promptString",
+    "description": "CodeSonar analysis name",
+    "default": "Analysis-1234"
+    }
+    ],
+    "tasks": [
+    {
+    "type": "shell",
+    "label": "Rust: CodeSonar analyze",
+    "command": [
+        "cargo clippy --no-deps --message-format=json | clippy-sarif > codesonar-scan.sarif &&",
+        "codesonar analyze numpy -hubuser ${config:codesonar.hubUser} -auth certificate -name ${input:codesonarAnalysisName} -conf-file codesonar.conf -project OSS-Projects/numpy-GitHub/developers/${config:codesonar.hubUser}  ${config:codesonar.hubAddress} codesonar import_sarif.py codesonar-scan.sarif -include-sources '**/*.rs' &&",
+        "rm codesonar-scan.sarif"
+    ],
+    "group": "build",
+    "detail": "builder: make",
+    "presentation": {
+        "showReuseMessage": false,
+        "panel": "new"
+    }
+    }
+    ]
+}
