@@ -4,6 +4,10 @@
 	"name": "Rust",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "codesecurese/rust-cso-builder:8.1b0",
+	"mounts" : [
+		"source=${localEnv:HOME}/.csurf,target=/home/user/.csurf,type=bind",
+		"source=${localEnv:HOME}/.ssh,target=/home/user/.ssh,type=bind",
+		],
 
 	// Use 'mounts' to make the cargo cache persistent in a Docker Volume.
 	// "mounts": [

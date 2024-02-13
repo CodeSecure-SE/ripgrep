@@ -22,3 +22,7 @@ cargo-timing-*.html
 cargo-timing.html
 
 *sarif
+
+ripget.prj*
+ripget*.conf
+
