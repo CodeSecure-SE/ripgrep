@@ -63,9 +63,8 @@ jobs:
         uses: thollander/actions-comment-pull-request@v2
         with: 
           filePath: warnings.md
-# Disabling for now, too many warnings, see https://codesecure.atlassian.net/browse/CSO-3965
-#      - name: Upload SARIF results
-#        uses: github/codeql-action/upload-sarif@v3
-#        with:
-#          sarif_file: warnings.sarif
-#          category: "CodeSecure CodeSonar"            
+      - name: Upload SARIF results
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: warnings.sarif
+          category: "CodeSecure CodeSonar"            
