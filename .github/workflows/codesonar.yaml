@@ -48,9 +48,9 @@ jobs:
           path: cso-scripts
       - name: Build and Analyze
         run: | 
-           ln -s /home/user/.cargo /github/home/.cargo
+           mv /home/user/.cargo /github/home/.cargo
            source /home/github/.cargo/env
-           rustup default stable
+#           rustup default stable
            cargo clippy --no-deps --message-format=json | clippy-sarif > codesonar-scan.sarif
            python3 cso-scripts/build_and_analyze.py  codesonar.conf codesonar import_sarif.py codesonar-scan.sarif -include-sources '**/*.rs'
         shell: bash
@@ -65,8 +65,9 @@ jobs:
         uses: thollander/actions-comment-pull-request@v2
         with: 
           filePath: warnings.md
-      - name: Upload SARIF results
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: warnings.sarif
-          category: "CodeSecure CodeSonar"            
+# Disabling for now, too many warnings, see https://codesecure.atlassian.net/browse/CSO-3965
+#      - name: Upload SARIF results
+#        uses: github/codeql-action/upload-sarif@v3
+#        with:
+#          sarif_file: warnings.sarif
+#          category: "CodeSecure CodeSonar"            
