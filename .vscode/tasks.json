@@ -18,11 +18,24 @@
         "rm codesonar-scan.sarif"
     ],
     "group": "build",
-    "detail": "builder: make",
+    "detail": "builder: cargo",
     "presentation": {
         "showReuseMessage": false,
         "panel": "new"
     }
-    }
+    },
+    {
+        "type": "shell",
+        "label": "Rust: Build",
+        "command": [
+            "cargo build"
+        ],
+        "group": "build",
+        "detail": "builder: cargo",
+        "presentation": {
+            "showReuseMessage": false,
+            "panel": "new"
+        }
+        }
     ]
 }
