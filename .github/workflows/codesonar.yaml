@@ -34,8 +34,6 @@ jobs:
       TARGET: ${{ github.base_ref }}
       IS_PR: ${{ github.event_name }}
     steps:
-      - name: Set parallelism
-        run:  echo "PARALLEL=`nproc`" >> $GITHUB_ENV
       - name: Checkout 
         uses: actions/checkout@v4
       - name: Safe directory
@@ -50,6 +48,7 @@ jobs:
         run: | 
            mv /home/user/.cargo /github/home/.cargo
            source /github/home/.cargo/env
+           rustup default stable
            cargo clippy --no-deps --message-format=json | clippy-sarif > codesonar-scan.sarif
            python3 cso-scripts/build_and_analyze.py  codesonar.conf codesonar import_sarif.py codesonar-scan.sarif -include-sources '**/*.rs'
         shell: bash
