@@ -48,7 +48,7 @@ jobs:
           path: cso-scripts
       - name: Build and Analyze
         run: | 
-           ln -s /homme/user/.cargo /github/home/.cargo
+           ln -s /home/user/.cargo /github/home/.cargo
            source /home/user/.cargo/env
            cargo clippy --no-deps --message-format=json | clippy-sarif > codesonar-scan.sarif
            python3 cso-scripts/build_and_analyze.py  codesonar.conf codesonar import_sarif.py codesonar-scan.sarif -include-sources '**/*.rs'
