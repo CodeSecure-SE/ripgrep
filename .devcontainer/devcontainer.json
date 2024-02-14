@@ -22,6 +22,14 @@
 	// "features": {},
 	"containerEnv": {
 		"SHELL": "/usr/bin/bash"
+},
+"customizations": {
+	"vscode": {
+		"extensions": [
+			"CodeSecure.vscode-codesonar",
+			"1YiB.rust-bundle"
+		]
+	}
 }
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
