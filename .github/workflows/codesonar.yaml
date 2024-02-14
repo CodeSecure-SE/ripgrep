@@ -47,8 +47,8 @@ jobs:
       - name: Build and Analyze
         run: | 
            mv /home/user/.cargo /github/home/.cargo
+           mv /home/user/.rustup /github/home/.rustup
            source /github/home/.cargo/env
-           rustup default stable
            cargo clippy --no-deps --message-format=json | clippy-sarif > codesonar-scan.sarif
            python3 cso-scripts/build_and_analyze.py  -noupload codesonar.conf codesonar import_sarif.py codesonar-scan.sarif -include-sources '**/*.rs'
         shell: bash
