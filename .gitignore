@@ -20,3 +20,9 @@ ripgrep*_source.tar.bz2
 # Cargo timings
 cargo-timing-*.html
 cargo-timing.html
+
+#CodeSonar
+ripget.*/*
+ripget.*
+*.sarif
+
