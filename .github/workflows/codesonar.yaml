@@ -42,7 +42,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: CodeSecure-SE/codesonar_ci
-          ref: main
+          ref: feature/no-upload-flag
           path: cso-scripts
       - name: Build and Analyze
         run: | 
@@ -50,7 +50,7 @@ jobs:
            source /github/home/.cargo/env
            rustup default stable
            cargo clippy --no-deps --message-format=json | clippy-sarif > codesonar-scan.sarif
-           python3 cso-scripts/build_and_analyze.py  codesonar.conf codesonar import_sarif.py codesonar-scan.sarif -include-sources '**/*.rs'
+           python3 cso-scripts/build_and_analyze.py  -noupload codesonar.conf codesonar import_sarif.py codesonar-scan.sarif -include-sources '**/*.rs'
         shell: bash
       - name: Upload SARIF to GitHub #Use this if you do not have GitHub Enterprise
         if: ${{ github.event.pull_request }}
