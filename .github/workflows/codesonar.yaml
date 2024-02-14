@@ -42,7 +42,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: CodeSecure-SE/codesonar_ci
-          ref: feature/no-upload-flag
+          ref: main
           path: cso-scripts
       - name: Build and Analyze
         run: | 
