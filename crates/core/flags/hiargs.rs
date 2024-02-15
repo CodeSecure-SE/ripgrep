@@ -547,7 +547,7 @@ impl HiArgs {
         builder
             .color_specs(self.colors.clone())
             .hyperlink(self.hyperlink_config.clone())
-            .separator(self.path_separator.clone())
+            .separator(self.path_separator)
             .terminator(self.path_terminator.unwrap_or(b'\n'));
         builder
     }
