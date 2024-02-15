@@ -27,7 +27,8 @@
 	"vscode": {
 		"extensions": [
 			"CodeSecure.vscode-codesonar",
-			"1YiB.rust-bundle"
+			"1YiB.rust-bundle",
+			"GitHub.vscode-pull-request-github"
 		]
 	}
 }
