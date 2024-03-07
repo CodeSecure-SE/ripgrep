@@ -28,7 +28,8 @@
 		"extensions": [
 			"CodeSecure.vscode-codesonar",
 			"1YiB.rust-bundle",
-			"GitHub.vscode-pull-request-github"
+			"GitHub.vscode-pull-request-github",
+			"MS-SarifVSCode.sarif-viewer"
 		]
 	}
 }
