@@ -12,7 +12,7 @@ jobs:
     permissions: write-all
     runs-on: self-hosted
     container:
-      image: codesecurese/rust-cso-builder:8.1b0
+      image: ghrc.io/codesecure-se/rust-cso-builder:8.1b1
       credentials:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
