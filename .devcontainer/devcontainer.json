@@ -3,7 +3,7 @@
 {
 	"name": "Rust",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "ghcr.io/codesecure-se/rust-cso-builder:8.1b0",
+	"image": "ghcr.io/codesecure-se/rust-cso-builder:8.1b1",
 	"mounts" : [
 		"source=${localEnv:HOME}/.csurf,target=/home/user/.csurf,type=bind",
 		"source=${localEnv:HOME}/.ssh,target=/home/user/.ssh,type=bind",
