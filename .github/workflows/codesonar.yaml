@@ -12,7 +12,7 @@ jobs:
     permissions: write-all
     runs-on: codesecure-runner-set
     container:
-      image: ghcr.io/codesecure-se/rust-cso-builder:8.1p0
+      image: ghcr.io/codesecure-se/rust-cso-builder:8.2p0
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.github_token }}
@@ -26,7 +26,7 @@ jobs:
       BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
       CSONAR_HUB_URL: "https://partnerdemo.codesonar.com" 
       CSONAR_HUB_USER: "${{ secrets.CSONAR_HUB_USER }}"
-      CSONAR_HUB_PASSWORD: "${{ secrets.CSONAR_HUB_PASS }}"
+      CSONAR_HUB_PASSWORD: "${{ secrets.CSONAR_HUB_PASSWORD }}"
       CSONAR_CSHOME: /opt/codesonar
       CS_USER_HOME: /__w/ripgrep/ripgrep
       COMMIT_HASH: ${{ github.sha }}
