@@ -9,6 +9,7 @@ Effectively, a haystack wraps a directory entry and adds some light application
 level logic around it.
 */
 
+
 use std::path::Path;
 
 /// A builder for constructing things to search over.
