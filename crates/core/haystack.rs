@@ -17,6 +17,7 @@ pub(crate) struct HaystackBuilder {
     strip_dot_prefix: bool,
 }
 
+
 impl HaystackBuilder {
     /// Return a new haystack builder with a default configuration.
     pub(crate) fn new() -> HaystackBuilder {
